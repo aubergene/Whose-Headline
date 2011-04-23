@@ -2,7 +2,6 @@
 
   <h1><%= label_tag @headline.id, @headline.title %></h1>
   <%= hidden_field_tag :headline_id, @headline.id %>
-  <%= @headline.source.name %>
 
   <ul>
     <% for source in @sources %>
