@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110423155626) do
+ActiveRecord::Schema.define(:version => 20110423180327) do
 
   create_table "headlines", :force => true do |t|
     t.integer  "source_id"
@@ -26,6 +26,16 @@ ActiveRecord::Schema.define(:version => 20110423155626) do
     t.string   "name"
     t.string   "logo_url"
     t.string   "rss_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "nickname"
+    t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

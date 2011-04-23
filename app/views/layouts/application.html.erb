@@ -11,7 +11,19 @@
 <header>
   <h2><%= link_to 'Headliner', root_path %></h2>
 
+  <div id="user_nav">
+    <% if current_user %>
+      Signed in as
+      @<%= current_user.nickname %> |
+      <%= link_to "Sign Out", signout_path %>
+    <% else %>
+      <%= link_to "Sign in with Twitter", "/auth/twitter" %>
+    <% end %>
+  </div>
+
 </header>
+
+<div><%= flash[:notice] %></div>
 
 <%= yield %>
 

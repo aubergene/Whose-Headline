@@ -1,0 +1,16 @@
+<h1>Users</h1>
+
+<table>
+  <tr>
+    <th>Source</th>
+    <th>Headlines</th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= link_to user.twitter_name, user %></td>
+    <td><% %></td>
+  </tr>
+<% end %>
+</table>
+
