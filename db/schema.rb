@@ -21,11 +21,16 @@ ActiveRecord::Schema.define(:version => 20110423191006) do
     t.datetime "created_at"
   end
 
+  add_index "headlines", ["guid"], :name => "index_headlines_on_guid", :unique => true
+  add_index "headlines", ["source_id"], :name => "index_headlines_on_source_id"
+
   create_table "played_sources", :force => true do |t|
     t.integer  "source_id"
     t.integer  "play_id"
     t.datetime "created_at"
   end
+
+  add_index "played_sources", ["source_id", "play_id"], :name => "index_played_sources_on_source_id_and_play_id"
 
   create_table "plays", :force => true do |t|
     t.integer  "user_id"
@@ -34,6 +39,11 @@ ActiveRecord::Schema.define(:version => 20110423191006) do
     t.boolean  "won"
     t.datetime "created_at"
   end
+
+  add_index "plays", ["chosen_source_id"], :name => "index_plays_on_chosen_source_id"
+  add_index "plays", ["headline_id"], :name => "index_plays_on_headline_id"
+  add_index "plays", ["user_id"], :name => "index_plays_on_user_id"
+  add_index "plays", ["won"], :name => "index_plays_on_won"
 
   create_table "sources", :force => true do |t|
     t.string   "name"
@@ -49,8 +59,11 @@ ActiveRecord::Schema.define(:version => 20110423191006) do
     t.string   "name"
     t.string   "nickname"
     t.string   "url"
+    t.boolean  "admin",      :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "users", ["provider", "uid"], :name => "index_users_on_provider_and_uid", :unique => true
 
 end

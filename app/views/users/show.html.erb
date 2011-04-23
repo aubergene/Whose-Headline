@@ -1,3 +1,4 @@
+<div class="grid_12">
 <h1>
   <%= @user.twitter_name %>
 </h1>
@@ -7,3 +8,14 @@
   <%= link_to @user.url, @user.url %>
 </p>
 
+<p>
+  <b>Number of games played:</b>
+  <%= @user.plays.count %>
+</p>
+
+<p>
+  <b>Number of games won:</b>
+  <%= @user.plays.where(:won => true).count %>
+</p>
+
+</div>

@@ -1,9 +1,45 @@
-body { background-color: #fff; color: #333; }
+body {
+/*  background-color: #B8306A;*/
+  background: #ccc;
+  color: #333;
+  margin: 0;
+}
 
 body, p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size:   13px;
-  line-height: 18px;
+  font-family: sans-serif;
+}
+
+header {
+  background: #333;
+  color: #ccc;
+  padding-top: 12px;
+}
+
+header h2 {
+  margin: 0;
+}
+
+header a {
+  color: #ccf;
+  text-decoration: none;
+}
+header a:hover {
+  text-decoration: underline;
+}
+
+.guess_headline {
+  font-size: 45px;
+  font-family: 'Special Elite', sans-serif;
+  padding: 18px;
+  border: 3px solid #333;
+  margin: 2px;
+/*  background: url(/images/leopardskin.gif);*/
+background: #fdfddd;
+}
+
+#mainContent {
+  background: #fff;
+  padding-bottom: 140px;
 }
 
 pre {
@@ -12,45 +48,19 @@ pre {
   font-size: 11px;
 }
 
-a { color: #000; }
-a:visited { color: #666; }
-a:hover { color: #fff; background-color:#000; }
-
-div.field, div.actions {
-  margin-bottom: 10px;
+#user_nav {
+  text-align: right;
 }
 
 #notice {
   color: green;
+  background: #efe;
+  border: 1px solid green;
+  margin-top: 10px;
+  padding: 6px;
+  font-size: 22px;
 }
 
-.field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table;
-}
-
-#error_explanation {
-  width: 450px;
-  border: 2px solid red;
-  padding: 7px;
-  padding-bottom: 0;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
-}
-
-#error_explanation h2 {
-  text-align: left;
-  font-weight: bold;
-  padding: 5px 5px 5px 15px;
-  font-size: 12px;
-  margin: -7px;
-  margin-bottom: 0px;
-  background-color: #c00;
-  color: #fff;
-}
-
-#error_explanation ul li {
-  font-size: 12px;
-  list-style: square;
+button {
+  cursor: pointer;
 }

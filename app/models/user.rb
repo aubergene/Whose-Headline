@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 
+  has_many :plays
+
   validates_presence_of :provider, :uid, :nickname, :url
 
   def self.create_with_omniauth(auth)

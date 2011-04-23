@@ -1,6 +1,10 @@
+<div class="grid_12">
+
+  <p>Guess who wrote the headline below</p>
+
 <%= form_for(@play) do |f| %>
 
-  <h1><%= label_tag @headline.id, @headline.title %></h1>
+  <h1 class="guess_headline"><%= label_tag @headline.id, @headline.title %></h1>
   <%= hidden_field_tag :headline_id, @headline.id %>
 
   <ul>
@@ -16,3 +20,4 @@
     <%= f.submit "Skip" %>
   </div>
 <% end %>
+</div>

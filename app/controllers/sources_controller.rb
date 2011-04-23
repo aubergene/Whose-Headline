@@ -1,4 +1,7 @@
 class SourcesController < ApplicationController
+
+  before_filter :admin_user, :except => [:index, :show]
+
   # GET /sources
   # GET /sources.xml
   def index

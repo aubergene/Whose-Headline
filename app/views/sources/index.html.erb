@@ -1,4 +1,5 @@
-<h1>Listing sources</h1>
+<div class="grid_12">
+<h1>Sources</h1>
 
 <table>
   <tr>
@@ -13,13 +14,16 @@
   <tr>
     <td><%= link_to image_tag(source.logo_url), source %></td>
     <td><%= source.headlines.count %></td>
+    <% if admin_user %>
     <td><%= link_to 'Show', source %></td>
     <td><%= link_to 'Edit', edit_source_path(source) %></td>
     <td><%= link_to 'Destroy', source, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Source', new_source_path %>
+<%= link_to 'New Source', new_source_path if admin_user %>
+</div>
