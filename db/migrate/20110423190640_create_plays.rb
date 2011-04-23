@@ -8,6 +8,10 @@ class CreatePlays < ActiveRecord::Migration
 
       t.datetime :created_at
     end
+    add_index :plays, :user_id
+    add_index :plays, :headline_id
+    add_index :plays, :chosen_source_id
+    add_index :plays, :won
   end
 
   def self.down

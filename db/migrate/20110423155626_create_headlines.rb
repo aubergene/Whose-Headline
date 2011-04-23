@@ -9,6 +9,8 @@ class CreateHeadlines < ActiveRecord::Migration
 
       t.datetime :created_at
     end
+    add_index :headlines, :source_id
+    add_index :headlines, :guid, :unique => true
   end
 
   def self.down

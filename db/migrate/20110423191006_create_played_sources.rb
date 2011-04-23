@@ -6,6 +6,7 @@ class CreatePlayedSources < ActiveRecord::Migration
 
       t.datetime :created_at
     end
+    add_index :played_sources, [:source_id, :play_id]
   end
 
   def self.down
