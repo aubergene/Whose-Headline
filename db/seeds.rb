@@ -7,7 +7,7 @@
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
 
-User.create(provider: "twitter", uid: "6289902", name: "Julian Burgess", nickname: "aubergene", url: "http://twitter.com/aubergene", admin: true)
+User.create(:provider => "twitter", :uid => "6289902", :name => "Julian Burgess", :nickname => "aubergene", :url => "http://twitter.com/aubergene", :admin => true)
 
 Source.create(:name => 'The New York Times', :logo_url => "nytlogo379x64.png", :rss_url => "http://feeds.nytimes.com/nyt/rss/HomePage")
 
