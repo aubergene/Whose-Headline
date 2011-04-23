@@ -17,8 +17,6 @@ class PlaysController < ApplicationController
     sources = Source.find(params[:source_ids])
 
     play = Play.new(:user => current_user, :headline => headline, :chosen_source => chosen_source)
-    puts chosen_source.inspect
-    puts play.inspect
     sources.each do |source|
       play.played_sources.build(:source => source)
     end
@@ -27,7 +25,6 @@ class PlaysController < ApplicationController
       msg = play.won? ? 'You won!' : 'loser!'
       flash[:notice] = msg
     else
-      # render :json => play.inspect and return
       flash[:notice] = "Hmm, couldn't save"
     end
     redirect_to new_play_path

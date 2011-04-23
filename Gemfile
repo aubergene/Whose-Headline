@@ -8,6 +8,12 @@ gem 'rails', '3.0.7'
 gem 'sqlite3'
 gem "omniauth"
 
+require 'rss/1.0'
+require 'rss/2.0'
+require 'open-uri'
+gem 'htmlentities'
+
+
 group :development do
   gem "rails-erd"
 end

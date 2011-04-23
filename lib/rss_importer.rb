@@ -1,7 +1,3 @@
-require 'rss/1.0'
-require 'rss/2.0'
-require 'open-uri'
-
 class RssImporter
 
   def self.import(source)
@@ -16,9 +12,9 @@ class RssImporter
 
     rss.items.each do |item|
       next if source.headlines.exists?(:guid => item.guid.to_s)
-      # puts item.date.inspect
-      # puts item.date.class
-      source.headlines.create(:guid => item.guid, :title => item.title, :link => item.link, :published_at => item.date.to_s)
+
+      title = HTMLEntities.new.decode(item.title)
+      source.headlines.create(:guid => item.guid, :title => title, :link => item.link, :published_at => item.date.to_s)
       created += 1
     end
 
