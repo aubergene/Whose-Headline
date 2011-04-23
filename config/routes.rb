@@ -1,8 +1,13 @@
 Headliner::Application.routes.draw do
+  resources :play_sources
+
+  resources :plays
+
   resources :sources
   resources :users
 
   match "/auth/:provider/callback" => "sessions#create"
+  match '/auth/failure', :to => 'sessions#failure'
   match "/signout" => "sessions#destroy", :as => :signout
 
   root :to => "sources#index"

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110423180327) do
+ActiveRecord::Schema.define(:version => 20110423191006) do
 
   create_table "headlines", :force => true do |t|
     t.integer  "source_id"
@@ -19,7 +19,20 @@ ActiveRecord::Schema.define(:version => 20110423180327) do
     t.string   "link"
     t.datetime "published_at"
     t.datetime "created_at"
-    t.datetime "updated_at"
+  end
+
+  create_table "played_sources", :force => true do |t|
+    t.integer  "source_id"
+    t.integer  "play_id"
+    t.datetime "created_at"
+  end
+
+  create_table "plays", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "headline_id"
+    t.integer  "chosen_source_id"
+    t.boolean  "won"
+    t.datetime "created_at"
   end
 
   create_table "sources", :force => true do |t|

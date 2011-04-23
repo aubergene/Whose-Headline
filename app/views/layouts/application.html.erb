@@ -11,6 +11,8 @@
 <header>
   <h2><%= link_to 'Headliner', root_path %></h2>
 
+  <p><%= link_to 'PLay new game', new_play_path %></p>
+
   <div id="user_nav">
     <% if current_user %>
       Signed in as
@@ -24,6 +26,8 @@
 </header>
 
 <div><%= flash[:notice] %></div>
+<p id="notice"><%= notice %></p>
+
 
 <%= yield %>
 

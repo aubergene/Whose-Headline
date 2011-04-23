@@ -1,0 +1,19 @@
+<%= form_for(@play) do |f| %>
+
+  <h1><%= label_tag @headline.id, @headline.title %></h1>
+  <%= hidden_field_tag :headline_id, @headline.id %>
+  <%= @headline.source.name %>
+
+  <ul>
+    <% for source in @sources %>
+      <li>
+        <button name="chosen_source_id" value="<%= source.id %>"><%= image_tag(source.logo_url) %></button>
+        <%= hidden_field_tag "source_ids[]", source.id  %>
+      </li>
+    <% end %>
+  </ul>
+
+  <div class="actions">
+    <%= f.submit "Skip" %>
+  </div>
+<% end %>

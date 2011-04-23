@@ -9,4 +9,14 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
+  def require_user
+    logger.debug "ApplicationController::require_user"
+    unless current_user
+      flash[:notice] = "You must be logged in to access this page"
+      redirect_to root_path
+      return false
+    end
+  end
+
+
 end

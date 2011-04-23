@@ -7,7 +7,7 @@ class CreateHeadlines < ActiveRecord::Migration
       t.string :link
       t.datetime :published_at
 
-      t.timestamps
+      t.datetime :created_at
     end
   end
 
