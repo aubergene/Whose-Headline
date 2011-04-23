@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>
+  <%= @source.name %>
+</h1>
+
+<p>
+  <b>Logo url:</b>
+  <%= image_tag @source.logo_url %>
+</p>
+
+<p>
+  <b>RSS url:</b>
+  <%= link_to @source.rss_url, @source.rss_url %>
+</p>
+
+<h2>Latest headlines</h2>
+<% if !@source.headlines.blank? %>
+  <ul>
+  <% for headline in @source.headlines %>
+    <li>
+      <%= link_to headline.title, headline.link %><br />
+      <%= time_ago_in_words headline.published_at %> ago
+    </li>
+  <% end %>
+  </ul>
+<% else %>
+  <p>No items yet</p>
+<% end %>
+
+
+<%= link_to 'Edit', edit_source_path(@source) %> |
+<%= link_to 'Back', sources_path %>

@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+
+
+Source.create(:name => 'The New York Times', :logo_url => "http://graphics8.nytimes.com/images/misc/nytlogo152x23.gif", :rss_url => "http://feeds.nytimes.com/nyt/rss/HomePage")
+
+Source.create(:name => 'The Guardian', :logo_url => "http://static.guim.co.uk/static/104069/zones/news/images/logo.gif", :rss_url => "http://feeds.guardian.co.uk/theguardian/rss")
+
