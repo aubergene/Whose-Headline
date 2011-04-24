@@ -1,16 +1,19 @@
-<h1>Users</h1>
+<div class="grid_12">
+  <h1>Users</h1>
 
-<table>
-  <tr>
-    <th>Source</th>
-    <th>Headlines</th>
-  </tr>
+  <table>
+    <tr>
+      <th>Source</th>
+      <th>Played</th>
+      <th>Won</th>
+    </tr>
 
-<% @users.each do |user| %>
-  <tr>
-    <td><%= link_to user.twitter_name, user %></td>
-    <td><% %></td>
-  </tr>
-<% end %>
-</table>
-
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= link_to user.twitter_name, user %></td>
+      <td><%= user.plays.count %></td>
+      <td><%= user.plays.where(:won => true).count %></td>
+    </tr>
+  <% end %>
+  </table>
+</div>
