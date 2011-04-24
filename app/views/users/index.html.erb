@@ -1,18 +1,20 @@
 <div class="grid_12">
   <h1>Users</h1>
 
-  <table>
+  <table class="basic">
     <tr>
-      <th>Source</th>
+      <th>User</th>
       <th>Played</th>
       <th>Won</th>
+      <th>%</th>
     </tr>
 
   <% @users.each do |user| %>
     <tr>
       <td><%= link_to user.twitter_name, user %></td>
-      <td><%= user.plays.count %></td>
-      <td><%= user.plays.where(:won => true).count %></td>
+      <td><%= played = user.plays.count %></td>
+      <td><%= won = user.plays.where(:won => true).count %></td>
+      <td><%= number_to_percentage(100.0 * won / played, :precision => 0) %></td>
     </tr>
   <% end %>
   </table>

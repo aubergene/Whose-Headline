@@ -5,7 +5,6 @@
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
-  <!-- <link href='http://fonts.googleapis.com/css?family=Bevan' rel='stylesheet' type='text/css'> -->
   <link href='http://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
 </head>
 <script type="text/javascript">
@@ -24,7 +23,10 @@
 <header class="container_12">
   <div class="grid_6">
     <h2>Whose Headline?</h2>
-    <p><%= link_to 'Play new game', new_play_path %></p>
+    <p>
+      <%= link_to 'Play new game', new_play_path %> |
+      <%= link_to 'Top users', users_path %>
+    </p>
   </div>
   <div class="grid_6" id="user_nav">
     <% if current_user %>

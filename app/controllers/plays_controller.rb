@@ -22,7 +22,11 @@ class PlaysController < ApplicationController
     end
 
     if play.save!
-      msg = play.won? ? 'Correct' : 'Wrong'
+      if play.won?
+        msg = "Correct"
+      else
+        msg = "Wrong - correct answer is #{play.headline.source.name}"
+      end
       flash[:notice] = msg
     else
       flash[:notice] = "Hmm, couldn't save"

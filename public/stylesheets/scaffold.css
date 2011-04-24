@@ -10,6 +10,7 @@ body, p, ol, ul, td {
 }
 
 header {
+  display: block;
   background: #333;
   color: #ccc;
   padding-top: 12px;
@@ -62,4 +63,22 @@ pre {
 
 button {
   cursor: pointer;
+}
+
+table.basic {
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+}
+
+table.basic td, table.basic th {
+  padding: 4px;
+  border: 1px solid #ccc;
+}
+
+table.basic th {
+  background: #ccc;
+}
+
+img {
+  border: none;
 }
