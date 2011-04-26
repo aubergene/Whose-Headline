@@ -3,7 +3,7 @@ Whose Headline?
 
 A game of guessing who published the headline.
 
-I wrote this game at the (NYC News+Gaming Hackathon)[http://hackshackers.com/blog/2011/04/24/headline-guessing-site-wins-newsgaming-hackathon-in-nyc/). It was based on an [previous idea](https://github.com/aubergene/Headliner) I had worked on whilst at [The Times](http://www.thetimes.co.uk).
+I wrote this game at the [NYC News+Gaming Hackathon](http://hackshackers.com/blog/2011/04/24/headline-guessing-site-wins-newsgaming-hackathon-in-nyc/). It was based on an [previous idea](https://github.com/aubergene/Headliner) I had worked on whilst at [The Times](http://www.thetimes.co.uk).
 
 Feel free to improve it and send pull requests.
 
