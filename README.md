@@ -7,6 +7,14 @@ I wrote this game at the [NYC News+Gaming Hackathon](http://hackshackers.com/blo
 
 Feel free to improve it and send pull requests.
 
+### Ideas
+
+* Sort the top users list correctly
+* Take users straight to the game upon sign in
+* Add lots of statistics and graphs showing which sources get confused, which headlines are most distinctive
+* Auto remove headlines which are always guessed correctly (they probably have an obvious clue in them)
+* Allow users to adjust the number of sources in the pool they guess from
+
 
 Copyright (C) 2011 Julian Burgess
 
