@@ -11,10 +11,12 @@ class RssImporter
     created = 0
 
     rss.items.each do |item|
-      next if source.headlines.exists?(:guid => item.guid.to_s)
+      guid = item.guid || item.link
+
+      next if source.headlines.exists?(:guid => guid.to_s)
 
       title = HTMLEntities.new.decode(item.title.to_s)
-      source.headlines.create(:guid => item.guid.to_s, :title => title, :link => item.link.to_s, :published_at => item.date.to_s)
+      source.headlines.create(:guid => guid, :title => title, :link => item.link.to_s, :published_at => item.date.to_s)
       created += 1
     end
 
