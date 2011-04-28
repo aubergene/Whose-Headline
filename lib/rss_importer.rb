@@ -11,9 +11,9 @@ class RssImporter
     created = 0
 
     rss.items.each do |item|
-      guid = item.guid || item.link
+      guid = (item.guid || item.link).to_s
 
-      next if source.headlines.exists?(:guid => guid.to_s)
+      next if source.headlines.exists?(:guid => guid)
 
       title = HTMLEntities.new.decode(item.title.to_s)
       source.headlines.create(:guid => guid, :title => title, :link => item.link.to_s, :published_at => item.date.to_s)
