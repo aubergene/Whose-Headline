@@ -9,8 +9,10 @@ class SessionsController < ApplicationController
     # end
 
     #TODO update username, name as appropriate
+    user.touch
+
     session[:user_id] = user.id
-    redirect_to root_url, :notice => "Signed in!"
+    redirect_to new_play_url, :notice => "Signed in!"
   end
 
   def failure
