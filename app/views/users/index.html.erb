@@ -7,6 +7,7 @@
       <th>Played</th>
       <th>Won</th>
       <th>%</th>
+      <th>Joined</th>
     </tr>
 
   <% @users.each do |user| %>
@@ -15,6 +16,7 @@
       <td><%= played = user.plays.count %></td>
       <td><%= won = user.plays.where(:won => true).count %></td>
       <td><%= number_to_percentage(100.0 * won / played, :precision => 0) %></td>
+      <td><%= time_ago_in_words(user.created_at) %> ago</td>
     </tr>
   <% end %>
   </table>
